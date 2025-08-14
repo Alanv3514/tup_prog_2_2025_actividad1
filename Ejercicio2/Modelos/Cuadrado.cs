@@ -8,10 +8,10 @@ namespace WindowsFormsApp1.Modelos
 {
     public class Cuadrado
     {
-        private int Lado { get; set; }
+        public int Lado { get; set; }
         public Cuadrado(int lado)
         {
-            Lado = lado;
+            this.Lado = lado;
         }
 
 

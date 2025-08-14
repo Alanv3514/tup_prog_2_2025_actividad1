@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Modelos
@@ -10,6 +11,7 @@ namespace WindowsFormsApp1.Modelos
 
     {
 
+        private System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.InvariantCulture;
         public double Ancho { get; set; }
         public double Largo { get; set; }
         public RectanguloDesarrollado(double radio, double largo)
@@ -30,9 +32,9 @@ namespace WindowsFormsApp1.Modelos
 
             return $@"{{
     ""Tipo"": ""{this.GetType().Name}"",
-    ""Ancho"": {Ancho},
-    ""Largo"": {Largo},
-    ""Area"": {calcularArea()}
+    ""Lago"": {Largo.ToString( culture)},
+    ""Ancho"": {Ancho.ToString( culture)},
+    ""Area"": {calcularArea().ToString("F2", culture)}
 }}";
         }
 
