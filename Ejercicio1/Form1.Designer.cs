@@ -40,6 +40,7 @@
             this.tbDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDescripcion.Size = new System.Drawing.Size(625, 426);
             this.tbDescripcion.TabIndex = 0;
+            this.tbDescripcion.TextChanged += new System.EventHandler(this.tbDescripcion_TextChanged);
             // 
             // btnConstruir
             // 

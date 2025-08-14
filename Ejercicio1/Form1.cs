@@ -42,5 +42,10 @@ namespace Ejercicio1
 ]";
 
         }
+
+        private void tbDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

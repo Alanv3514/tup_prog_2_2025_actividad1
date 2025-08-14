@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Ejercicio2.Modelos;
 
 namespace WindowsFormsApp1.Modelos
 {
-    public class Circulo
+    public class Circulo :FiguraPlana
     {
         private System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.InvariantCulture;
         public double Radio { get; set; }
@@ -16,17 +17,17 @@ namespace WindowsFormsApp1.Modelos
             Radio = radio;
         }
 
-        public double calcularArea()
+        public override double CalcularArea()
         {
             double area = 2*Math.PI *this.Radio * this.Radio;
             return area;
         }
-        public string describir()
+        public override string Describir()
         {
             return $@"{{
     ""Tipo"": ""{this.GetType().Name}"",
     ""Radio"": {Radio},
-    ""Area"": {calcularArea().ToString("F2",culture)}
+    ""Area"": {CalcularArea().ToString("F2",culture)}
 }}";
         }
     }

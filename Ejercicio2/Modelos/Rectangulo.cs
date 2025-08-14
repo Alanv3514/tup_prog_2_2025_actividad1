@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ejercicio2.Modelos;
 
 namespace WindowsFormsApp1.Modelos
 {
-    public class Rectangulo
+    public class Rectangulo :FiguraPlana
     {
         public double Ancho { get; set; }
         public double Largo { get; set; }
@@ -17,12 +18,12 @@ namespace WindowsFormsApp1.Modelos
         }
 
 
-        public double calcularArea()
+        public override double CalcularArea()
         {
             double area = Convert.ToDouble(Ancho)* Convert.ToDouble(Largo);
             return area;
         }
-        public string describir() {
+        public override string Describir() {
             string soy = (Ancho == Largo) ? "Cuadrado" : "Rectangulo";
 
 
@@ -30,7 +31,7 @@ namespace WindowsFormsApp1.Modelos
     ""Tipo"": ""{soy}"",
     ""Ancho"": {Ancho},
     ""Largo"": {Largo},
-    ""Area"": {calcularArea()}
+    ""Area"": {CalcularArea()}
 }}";
 
         }

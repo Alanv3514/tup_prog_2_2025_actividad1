@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Modelos
 {
-    public class Cuadrado
+    public class Cuadrado : Rectangulo
     {
         public int Lado { get; set; }
-        public Cuadrado(int lado)
+        public Cuadrado(int lado) : base(lado,lado)
         {
             this.Lado = lado;
         }
 
 
-        public double calcularArea()
+        public override double CalcularArea()
         {
             double area = Convert.ToDouble(Lado) * Convert.ToDouble(Lado);
             return area;
         }
-        public string describir()
+        public override string Describir()
         {
             return $@"{{
     ""Tipo"": ""{this.GetType().Name}"",
     ""Lado"": {this.Lado},
-    ""Area"": {calcularArea()}
+    ""Area"": {CalcularArea()}
 }}";
         }
     }

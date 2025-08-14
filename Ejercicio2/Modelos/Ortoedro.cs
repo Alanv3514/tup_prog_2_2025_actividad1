@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ejercicio2.Modelos;
 
 namespace WindowsFormsApp1.Modelos
 {
-    public class Ortoedro
+    public class Ortoedro :FiguraVolumetrica
     {
         private Rectangulo[] laterales = new Rectangulo[4];
         private Rectangulo[] bases = new Rectangulo[2];
@@ -24,51 +25,51 @@ namespace WindowsFormsApp1.Modelos
         }
 
 
-        public double calcularArea()
+        public override double CalcularArea()
         {
             double areaTotal = 0;
 
             for (int i = 0; i < 4; i++)
             {
-                areaTotal += laterales[i].calcularArea();
+                areaTotal += laterales[i].CalcularArea();
             }
 
             for (int i = 0; i < 2; i++)
             {
-                areaTotal += bases[i].calcularArea();
+                areaTotal += bases[i].CalcularArea();
             }
 
             return areaTotal;
         }
-        public double calcularVolumen()
+        public override double CalcularVolumen()
         {
          double volumen = 0;
-            double base1 = bases[0].calcularArea();
+            double base1 = bases[0].CalcularArea();
             double altura = laterales[0].Largo;
 
-            volumen = bases[0].calcularArea()* laterales[0].Largo;
+            volumen = bases[0].CalcularArea()* laterales[0].Largo;
             return volumen;
 
         }
-        public string describir()
+        public override string Describir()
         { 
 
             return $@"{{
     ""Tipo"": ""{this.GetType().Name}"",
     ""Laterales"": 
         [
-        {laterales[0].describir()},
-        {laterales[1].describir()},
-        {laterales[2].describir()},
-        {laterales[3].describir()}
+        {laterales[0].Describir()},
+        {laterales[1].Describir()},
+        {laterales[2].Describir()},
+        {laterales[3].Describir()}
         ],
     ""Bases"": 
         [
-        {bases[0].describir()},
-        {bases[1].describir()}
+        {bases[0].Describir()},
+        {bases[1].Describir()}
         ],
-    ""Area"": {calcularArea()},
-    ""Volumen"": {calcularVolumen()}
+    ""Area"": {CalcularArea()},
+    ""Volumen"": {CalcularVolumen()}
 }}";
         }
     }
