@@ -55,6 +55,7 @@
     <Compile Include="Modelos\Cilindro.cs" />
     <Compile Include="Modelos\Circulo.cs" />
     <Compile Include="Modelos\Cuadrado.cs" />
+    <Compile Include="Modelos\Cubo.cs" />
     <Compile Include="Modelos\Ortoedro.cs" />
     <Compile Include="Modelos\Rectangulo.cs" />
     <Compile Include="Modelos\RectanguloDesarrollado.cs" />

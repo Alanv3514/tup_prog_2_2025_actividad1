@@ -26,8 +26,8 @@ namespace Ejercicio1
         private void btnConstruir_Click(object sender, EventArgs e)
         {
             //construyendo los objetos
-            Cilindro objeto = new Cilindro(3, 3);
-            //Cubo objeto= new Cubo(3);
+            //Cilindro objeto = new Cilindro(3, 3);
+            Cubo objeto= new Cubo(3);
             //Ortoedro objeto = new Ortoedro(7, 7, 21);
 
             //Cilindro objeto = new Cilindro(9, 13);
