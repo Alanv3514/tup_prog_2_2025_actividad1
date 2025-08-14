@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Modelos
 {
     public class Circulo
     {
+        private System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.InvariantCulture;
         public double Radio { get; set; }
         public Circulo(double radio)
         {
@@ -24,7 +26,7 @@ namespace WindowsFormsApp1.Modelos
             return $@"{{
     ""Tipo"": ""{this.GetType().Name}"",
     ""Radio"": {Radio},
-    ""Area"": {calcularArea()}
+    ""Area"": {calcularArea().ToString("F2",culture)}
 }}";
         }
     }

@@ -8,10 +8,11 @@ namespace WindowsFormsApp1.Modelos
 {
     public class Cilindro
     {
+        private System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.InvariantCulture;
         private Circulo[] tapas = new Circulo[2];
         private RectanguloDesarrollado rectanguloDesarrollado;
 
-        Cilindro(double radio, double altura)
+        public Cilindro(double radio, double altura)
         {
             
 
@@ -47,8 +48,8 @@ namespace WindowsFormsApp1.Modelos
   ""Tipo"": ""{this.GetType().Name}"",
   ""Tapas"": [{tapas[0].describir()},{tapas[1].describir()}],
   ""Largo"": {rectanguloDesarrollado.describir()},
-  ""Area"": {calcularArea()},
-  ""Volumen"": {calcularVolumen()}
+  ""Area"": {calcularArea().ToString("F2", culture)},
+  ""Volumen"": {calcularVolumen().ToString("F2", culture)}
 }}"; 
         }
     }
