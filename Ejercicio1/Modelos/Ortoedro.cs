@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.Modelos
             double base1 = bases[0].calcularArea();
             double altura = laterales[0].Largo;
 
-            volumen = base1 * altura;
+            volumen = bases[0].calcularArea()* laterales[0].Largo;
             return volumen;
 
         }
